@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Login from "./Login";
+import Logout from "./Logout";
+import { useauth } from "../context/AutoProvider";
 
 function Navbar() {
+  const [authUser, setauthUser] = useauth();
   const [sticky, setsticky] = useState(false);
   useEffect(() => {
     const handlecroll = () => {
@@ -92,17 +95,23 @@ function Navbar() {
                 </svg>
               </label>
             </div>
-            <div>
+            
+           {authUser ? (
+            <Logout />
+          ) : (
+            <div className="">
               <a
-                className="btn"
+                className="bg-black text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
                 onClick={() =>
                   document.getElementById("my_modal_3").showModal()
                 }
-              >
-                Login
-              </a>
-              <Login/>
-            </div>
+              
+                >
+                  Login
+                </a>
+                <Login />
+              </div>
+            )}
           </div>
         </div>
       </div>

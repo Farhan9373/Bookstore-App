@@ -29,7 +29,7 @@ const Hero = () => {
               <input type="text" className="grow" placeholder="Email" />
             </label>
           </div>
-          <button className=" mt-3 btn btn-outline btn-accent">Login</button>
+          <button className=" mt-3 btn btn-outline btn-accent">Get started</button>
         </div>
         <div className="w-full md:w-1/2 order-1">
          <img src={Banner} className=" md:ml-36" alt="Book image"/>
